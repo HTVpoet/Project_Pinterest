@@ -6,6 +6,7 @@ using Microsoft.VisualBasic;
 using Project_Pinterest.Constants;
 using Project_Pinterest.DataContexts;
 using Project_Pinterest.Payloads.Converters;
+using Project_Pinterest.Payloads.DataResponses.DataPost;
 using Project_Pinterest.Payloads.DataResponses.DataToken;
 using Project_Pinterest.Payloads.DataResponses.DataUser;
 using Project_Pinterest.Payloads.Responses;
@@ -55,10 +56,19 @@ builder.Services.AddSwaggerGen(option =>
     });
 });
 builder.Services.AddScoped<IAuthService, AuthService>();
-
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPostService, PostService>();
+builder.Services.AddScoped<ResponseObject<DataResponsePost>>();
 builder.Services.AddScoped<ResponseObject<DataResponseUser>>();
 builder.Services.AddScoped<ResponseObject<DataResponseToken>>();
+builder.Services.AddScoped<ResponseObject<DataResponseComment>>();
+builder.Services.AddScoped<ResponseObject<DataResponseLike>>();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<UserConverter>();
+builder.Services.AddScoped<PostConverter>();
+builder.Services.AddScoped<LikeConverter>();
+builder.Services.AddScoped<CommentConverter>();
+builder.Services.AddScoped<LikeCommentConverter>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
     options.RequireHttpsMetadata = false;

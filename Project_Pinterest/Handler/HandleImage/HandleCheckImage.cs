@@ -4,7 +4,7 @@ namespace Project_Pinterest.Handler.HandleImage
 {
     public class HandleCheckImage
     {
-        public static bool IsImage(IFormFile imageFile, int maxSizeInBytes = (2 * 1024 * 768))
+        public static bool IsImage(IFormFile imageFile, int maxSizeInBytes = (2 * 1024 * 1024))
         {
             try
             {
