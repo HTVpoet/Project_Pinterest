@@ -18,6 +18,7 @@ namespace Project_Pinterest.Payloads.Converters
         {
             return new DataResponseComment
             {
+                Id = post.Id,
                 CreateAt = DateTime.Now,
                 Content = post.Content,
                 FullName = _context.users.SingleOrDefault(x => x.Id == post.UserId).FullName,

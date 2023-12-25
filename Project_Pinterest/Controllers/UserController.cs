@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,24 +15,25 @@ namespace Project_Pinterest.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private UserController(IUserService userService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }
-        [HttpPut("DeleteUser/{id}")]
-        public async Task<IActionResult> DeleteUser(int userId)
+        [HttpPut("DeleteUser/{userId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteUser([FromRoute] int userId)
         {
             return Ok(await _userService.DeleteUser(userId));
         }
         [HttpGet("GetAllUsers")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAllUsers(int pageSize, int pageNumber)
+        public async Task<IActionResult> GetAllUsers(int pageSize = 10, int pageNumber = 1)
         {
             return Ok(await _userService.GetAllUsers(pageSize, pageNumber));
         }
         [HttpGet("GetUserByName")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetUserByName(string? name, int pageSize, int pageNumber)
+        public async Task<IActionResult> GetUserByName(string? name, int pageSize = 10, int pageNumber = 1)
         {
             return Ok(await _userService.GetUserByName(name, pageSize, pageNumber));
         }

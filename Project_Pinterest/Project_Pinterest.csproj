@@ -37,8 +37,4 @@
     <PackageReference Include="System.Security.Claims" Version="4.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Payloads\DataRequests\CollectionRequests\" />
-  </ItemGroup>
-
 </Project>

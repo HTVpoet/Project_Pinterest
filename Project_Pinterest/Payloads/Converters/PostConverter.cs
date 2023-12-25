@@ -19,6 +19,7 @@ namespace Project_Pinterest.Payloads.Converters
         {
             return new DataResponsePost
             {
+                Id = post.Id,
                 Title = post.Title,
                 CreateAt = post.CreateAt,
                 UpdateAt = post.UpdateAt,
@@ -26,7 +27,7 @@ namespace Project_Pinterest.Payloads.Converters
                 ImageUrl = post.ImageUrl,
                 NumberOfComments = post.NumberOfComments,
                 NumberOfLikes = post.NumberOfLikes,
-                PostStatusName= _context.postsStatus.SingleOrDefault(x => x.Id == post.PostStatusId).Name,
+                PostStatusName = _context.postsStatus.SingleOrDefault(x => x.Id == post.PostStatusId).Name,
                 FullName = _context.users.SingleOrDefault(x => x.Id == post.UserId).FullName,
                 DataResponseComments = _context.userCommentPosts.Where(x => x.PostId == post.Id).Select(x => _commentConverter.EntityToDTO(x)),
                 DataResponseLikes = _context.userLikePosts.Where(x => x.PostId == post.Id).Select(x => _userLikePost.EntityToDTO(x))

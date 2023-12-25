@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Project_Pinterest.DataContexts;
 using Project_Pinterest.Entities;
 using Project_Pinterest.Handler.HandleImage;
@@ -8,17 +8,20 @@ using Project_Pinterest.Payloads.DataRequests.PostRequests;
 using Project_Pinterest.Payloads.DataResponses.DataPost;
 using Project_Pinterest.Payloads.Responses;
 using Project_Pinterest.Services.Interfaces;
+using System.Net;
 
 namespace Project_Pinterest.Services.Implements
 {
     public class PostService : IPostService
     {
+        public WebClient webClient = new WebClient();
         private readonly AppDbContext _context;
         private readonly ResponseObject<DataResponsePost> _responseObject;
         private readonly ResponseObject<DataResponseComment> _responeObjectComment;
         private readonly CommentConverter _commentConverter;
         private readonly PostConverter _converter;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        public const string saveDirectory = "C:\\Users\\Admin\\Downloads";
         public PostService(AppDbContext context, ResponseObject<DataResponsePost> responseObject, PostConverter converter, IHttpContextAccessor httpContextAccessor, ResponseObject<DataResponseComment> responseObjectComment, CommentConverter commentConverter)
         {
             _context = context;
@@ -129,17 +132,34 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<PageResult<DataResponsePost>> GetAllPost(int pageSize, int pageNumber)
         {
-            var query = _context.posts.Include(x => x.UserLikePosts).Include(x => x.UserCommentPosts).AsNoTracking().Where(x => x.IsActive == true && x.IsDeleted == false).Select(x => _converter.EntityToDTO(x));
-            var result = Pagination.GetPagedData(query, pageSize, pageNumber);
+            var posts = await _context.posts
+                                      .Include(x => x.UserLikePosts)
+                                      .Include(x => x.UserCommentPosts)
+                                      .AsNoTracking()
+                                      .Where(x => x.IsActive == true && x.IsDeleted == false)
+                                      .ToListAsync();
+
+            var postDTOs = posts.Select( post =>  _converter.EntityToDTO(post)).ToList();
+
+            var result = Pagination.GetPagedData(postDTOs.AsQueryable(), pageSize, pageNumber);
             return result;
         }
 
+
         public async Task<PageResult<DataResponseComment>> GetCommentByUser(int userId, int pageSize, int pageNumber)
         {
-            var query = _context.userCommentPosts.Include(x => x.UserLikeCommentOfPosts).AsNoTracking().Where(x => x.UserId == userId && x.IsDeleted == false && x.IsActive == true).Select(x => _commentConverter.EntityToDTO(x));
-            var result = Pagination.GetPagedData(query, pageSize, pageNumber);
+            var userComments = await _context.userCommentPosts
+                                             .Include(x => x.UserLikeCommentOfPosts)
+                                             .AsNoTracking()
+                                             .Where(x => x.UserId == userId && x.IsDeleted == false && x.IsActive == true)
+                                             .ToListAsync();
+
+            var commentDTOsTasks = userComments.Select( comment =>  _commentConverter.EntityToDTO(comment));
+
+            var result = Pagination.GetPagedData(commentDTOsTasks.AsQueryable(), pageSize, pageNumber);
             return result;
         }
+
 
         public async Task<ResponseObject<DataResponsePost>> GetPostById(int postId)
         {
@@ -153,10 +173,22 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<PageResult<DataResponsePost>> GetPostByUser(int userId, int pageSize, int pageNumber)
         {
-            var query = _context.posts.Include(x => x.UserLikePosts).Include(x => x.UserCommentPosts).AsNoTracking().Where(x => x.UserId == userId && x.IsDeleted == false && x.IsActive == true).Select(x => _converter.EntityToDTO(x));
-            var result = Pagination.GetPagedData(query, pageSize, pageNumber);
+            var userPosts = await _context.posts
+                                          .Include(x => x.UserLikePosts)
+                                          .Include(x => x.UserCommentPosts)
+                                          .AsNoTracking()
+                                          .Where(x => x.UserId == userId && x.IsDeleted == false && x.IsActive == true)
+                                          .ToListAsync();
+
+            // Next, asynchronously convert each post to DTO
+            var postDTOsTasks = userPosts.Select(async post => _converter.EntityToDTO(post));
+            var postDTOs = await Task.WhenAll(postDTOsTasks);
+
+            // Finally, apply pagination
+            var result = Pagination.GetPagedData(postDTOs.AsQueryable(), pageSize, pageNumber);
             return result;
         }
+
 
         public async Task<string> LikePost(int userId, Request_UserLikePost request)
         {
@@ -227,5 +259,91 @@ namespace Project_Pinterest.Services.Implements
             await _context.SaveChangesAsync();
             return _responseObject.ResponseSuccess("Cập nhậ thông tin bài đăng thành công", _converter.EntityToDTO(post));
         }
+
+        public async Task<string> UserLikeComment(int userId, int commentId)
+        {
+            var comment = await _context.userCommentPosts.SingleOrDefaultAsync(x => x.Id == commentId && x.IsDeleted == false && x.IsActive == true);
+            if(comment is null)
+            {
+                return "Không tìm thấy bài viết";
+            }
+            var userLike = await _context.userLikeCommentOfPosts.SingleOrDefaultAsync(x => x.UserId == userId && x.UserCommentPostId == comment.Id);
+            if(userLike != null)
+            {
+                _context.userLikeCommentOfPosts.Remove(userLike);
+                _context.SaveChanges();
+            }
+            else
+            {
+                var userLikeComment = new UserLikeCommentOfPost
+                {
+                    LikeTime = DateTime.Now,
+                    Unlike = false,
+                    UserId = userId,
+                    UserCommentPostId = comment.Id,
+                };
+                await _context.userLikeCommentOfPosts.AddAsync(userLikeComment);
+                await _context.SaveChangesAsync();
+            }
+            comment.NumberOfLikes = _context.userLikeCommentOfPosts.Count(x => x.UserCommentPostId == comment.Id);
+            _context.userCommentPosts.Update(comment);
+            await _context.SaveChangesAsync();
+            return "Like bình luận thành công";
+        }
+        public async Task<ResponseObject<DataResponsePost>> SharePost(int userId, int postId)
+        {
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true);
+            var originalPost = await _context.posts.SingleOrDefaultAsync(x => x.Id == postId && x.IsActive == true && x.IsDeleted == false);
+
+            if (user == null || originalPost == null)
+            {
+                return _responseObject.ResponseError(StatusCodes.Status404NotFound, "Người dùng hoặc bài đăng không tồn tại", null);
+            }
+
+            Post sharedPost = new Post
+            {
+                CreateAt = DateTime.Now,
+                IsActive = true,
+                Description = originalPost.Description,
+                ImageUrl = originalPost.ImageUrl,
+                IsDeleted = false,
+                NumberOfComments = 0,
+                NumberOfLikes = 0,
+                PostStatusId = 1,
+                Title = originalPost.Title,
+                UserId = userId
+            };
+
+            await _context.posts.AddAsync(sharedPost);
+            await _context.SaveChangesAsync();
+
+            return _responseObject.ResponseSuccess("Chia sẻ bài đăng thành công", _converter.EntityToDTO(sharedPost));
+        }
+        public async Task<string> DownloadImageForPost(int postId)
+        {
+            var post = await _context.posts.SingleOrDefaultAsync(x => x.Id == postId);
+            if (post == null || string.IsNullOrEmpty(post.ImageUrl))
+            {
+                return "Không tìm thấy bài đăng hoặc không tìm thấy link ảnh.";
+            }
+
+            string fileName = Path.GetFileName(post.ImageUrl);
+            string localPath = Path.Combine(saveDirectory, fileName);
+
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    await client.DownloadFileTaskAsync(new Uri(post.ImageUrl), localPath);
+                }
+                return $"Download ảnh thành công";
+            }
+            catch (Exception ex)
+            {
+                return $"Đã xảy ra lỗi khi download ảnh: {ex.Message}";
+            }
+        }
+
+
     }
 }

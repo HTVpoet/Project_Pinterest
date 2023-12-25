@@ -6,6 +6,7 @@ namespace Project_Pinterest.DataContexts
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public AppDbContext() { }
         public DbSet<Collection> collections { get; set; }
         public DbSet<ConfirmEmail> confirmEmails { get; set; }
         public DbSet<Post> posts { get; set; }
@@ -19,5 +20,9 @@ namespace Project_Pinterest.DataContexts
         public DbSet<UserLikeCommentOfPost> userLikeCommentOfPosts { get; set; }
         public DbSet<UserLikePost> userLikePosts { get; set; }
         public DbSet<UserStatus> userStatuses { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }

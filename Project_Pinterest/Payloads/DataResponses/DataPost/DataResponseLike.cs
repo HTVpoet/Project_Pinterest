@@ -2,7 +2,7 @@
 
 namespace Project_Pinterest.Payloads.DataResponses.DataPost
 {
-    public class DataResponseLike
+    public class DataResponseLike : DataResponseBase
     {
         public string FullName { get; set; }
         public DateTime LikeTime { get; set; }

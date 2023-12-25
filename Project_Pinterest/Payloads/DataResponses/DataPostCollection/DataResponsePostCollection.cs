@@ -1,10 +1,9 @@
-﻿using Project_Pinterest.Entities;
+﻿
 
 namespace Project_Pinterest.Payloads.DataResponses.DataPostCollection
 {
-    public class DataResponsePostCollection
+    public class DataResponsePostCollection : DataResponseBase
     {
-        public string PostTitle { get; set; }
-        public string CollectionName { get; set; }
+        public int PostId { get; set; }
     }
 }

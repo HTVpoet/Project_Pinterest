@@ -15,6 +15,7 @@ namespace Project_Pinterest.Payloads.Converters
         {
             return new DataResponseUser
             {
+                Id = user.Id,
                 AvatarUrl = user.AvatarUrl,
                 DateOfBirth = user.DateOfBirth,
                 Email = user.Email,

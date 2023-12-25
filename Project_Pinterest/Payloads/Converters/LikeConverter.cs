@@ -1,4 +1,5 @@
-﻿using Project_Pinterest.DataContexts;
+﻿using Microsoft.EntityFrameworkCore;
+using Project_Pinterest.DataContexts;
 using Project_Pinterest.Entities;
 using Project_Pinterest.Payloads.DataResponses.DataPost;
 
@@ -13,12 +14,19 @@ namespace Project_Pinterest.Payloads.Converters
         }
         public DataResponseLike EntityToDTO(UserLikePost likePost)
         {
+            var fullName = _context.users
+                                         .Where(x => x.Id == likePost.UserId)
+                                         .Select(x => x.FullName)
+                                         .SingleOrDefault();
+
             return new DataResponseLike
             {
-                FullName = _context.users.SingleOrDefault(x => x.Id == likePost.UserId).FullName,
+                Id = likePost.Id,
+                FullName = fullName,
                 LikeTime = likePost.LikeTime,
                 Unlike = likePost.Unlike
             };
         }
+
     }
 }

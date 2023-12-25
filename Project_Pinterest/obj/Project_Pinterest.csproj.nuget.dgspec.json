@@ -96,9 +96,17 @@
               "target": "Package",
               "version": "[4.3.0, )"
             },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
             "NetMQ": {
               "target": "Package",
               "version": "[4.0.1.13, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",

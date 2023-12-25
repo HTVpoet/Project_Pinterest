@@ -190,7 +190,7 @@ namespace Project_Pinterest.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");         
+                        .HasColumnType("int");
 
                     b.Property<int?>("FollowerId")
                         .HasColumnType("int");

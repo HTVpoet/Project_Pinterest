@@ -1,6 +1,6 @@
 ﻿namespace Project_Pinterest.Payloads.DataResponses.DataUser
 {
-    public class DataResponseUser
+    public class DataResponseUser : DataResponseBase
     {
         public string UserName { get; set; }
         public string FullName { get; set; }

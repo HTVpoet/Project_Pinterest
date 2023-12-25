@@ -15,6 +15,7 @@ namespace Project_Pinterest.Payloads.Converters
         {
             return new DataResponseLikeComment
             {
+                Id = userLike.Id,
                 FullName = _context.users.SingleOrDefault(x => x.Id == userLike.UserId).FullName,
                 LikeTime = userLike.LikeTime,
                 Unlike = userLike.Unlike

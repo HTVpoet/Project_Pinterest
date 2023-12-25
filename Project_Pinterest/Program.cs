@@ -22,7 +22,7 @@ builder.Logging.AddConsole();
 
 builder.Services.AddControllersWithViews()
                 .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString(AppSettingsKeys.DEFAULT_CONNECTION)));
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseMySql(builder.Configuration.GetConnectionString(AppSettingsKeys.MYSQL_CONNECTION), MySqlServerVersion.AutoDetect(builder.Configuration.GetConnectionString(AppSettingsKeys.MYSQL_CONNECTION))), ServiceLifetime.Transient);
 builder.Services.AddCors();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

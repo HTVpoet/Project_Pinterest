@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,15 +21,15 @@ namespace Project_Pinterest.Controllers
         }
         [HttpPost("CreatePost")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> CreatePost(Request_CreatePost request)
+        public async Task<IActionResult> CreatePost([FromForm] Request_CreatePost request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _postService.CreatePost(id, request));
         }
-        [HttpPut("DeletePost/{id}")]
+        [HttpPut("DeletePost/{postId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeletePost(int postId)
+        public async Task<IActionResult> DeletePost([FromRoute] int postId)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _postService.DeletePost(id, postId));
@@ -46,7 +46,7 @@ namespace Project_Pinterest.Controllers
         }
         [HttpPut("UpdatePost")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> UpdatePost(Request_UpdatePost request)
+        public async Task<IActionResult> UpdatePost([FromForm] Request_UpdatePost request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _postService.UpdatePost(id, request));
@@ -65,13 +65,13 @@ namespace Project_Pinterest.Controllers
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _postService.DeleteComment(id, request));
         }
-        [HttpGet("GetCommentByUser/{id}")]
-        public async Task<IActionResult> GetCommentByUser(int userId, int pageSize = 10, int pageNumber = 1)
+        [HttpGet("GetCommentByUser/{userId}")]
+        public async Task<IActionResult> GetCommentByUser([FromRoute] int userId, int pageSize = 10, int pageNumber = 1)
         {
             return Ok(await _postService.GetCommentByUser(userId, pageSize, pageNumber));
         }
-        [HttpGet("GetPostById")]
-        public async Task<IActionResult> GetPostById(int postId)
+        [HttpGet("GetPostById/{postId}")]
+        public async Task<IActionResult> GetPostById([FromRoute] int postId)
         {
             return Ok(await _postService.GetPostById(postId));
         }
@@ -88,6 +88,25 @@ namespace Project_Pinterest.Controllers
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _postService.UpdateComment(commentId, id, request));
+        }
+        [HttpPost("UserLikeComment/{commentId}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> UserLikeComment([FromRoute] int commentId)
+        {
+            int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
+            return Ok(await _postService.UserLikeComment(id, commentId));
+        }
+        [HttpPost("SharePost/{postId}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> SharePost([FromRoute] int postId)
+        {
+            int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
+            return Ok(await _postService.SharePost(id, postId));
+        }
+        [HttpPost("DownloadImageForPost")]
+        public async Task<IActionResult> DownloadImageForPost(int postId)
+        {
+            return Ok(await _postService.DownloadImageForPost(postId));
         }
     }
 }

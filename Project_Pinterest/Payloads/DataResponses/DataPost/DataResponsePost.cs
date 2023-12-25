@@ -1,6 +1,6 @@
 ﻿namespace Project_Pinterest.Payloads.DataResponses.DataPost
 {
-    public class DataResponsePost
+    public class DataResponsePost : DataResponseBase
     {
         public string Title { get; set; }
         public string ImageUrl { get; set; }
