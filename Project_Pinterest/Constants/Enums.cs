@@ -1,6 +1,11 @@
-﻿namespace Project_Pinterest.Constants
+﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using JsonConverter = System.Text.Json.Serialization.JsonConverter;
+using JsonConverterAttribute = Newtonsoft.Json.JsonConverterAttribute;
+
+namespace Project_Pinterest.Constants
 {
-    public class Enums
+    public static class Enums
     {
         public enum FileType
         {
@@ -9,6 +14,7 @@
             Image,
             Video
         }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public enum Action
         {
             FOLLOW,

@@ -20,6 +20,7 @@ namespace Project_Pinterest.DataContexts
         public DbSet<UserLikeCommentOfPost> userLikeCommentOfPosts { get; set; }
         public DbSet<UserLikePost> userLikePosts { get; set; }
         public DbSet<UserStatus> userStatuses { get; set; }
+        public DbSet<Report> reports { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
