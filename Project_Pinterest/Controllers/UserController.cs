@@ -39,10 +39,32 @@ namespace Project_Pinterest.Controllers
         }
         [HttpPut("UpdateUser")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Consumes(contentType: "multipart/form-data")]
         public async Task<IActionResult> UpdateUser(Request_UpdateUserInfor request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _userService.UpdateUser(id, request));
+        }
+        [HttpPut("LockAccount/{userLockedId}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> LockAccount([FromRoute] int userLockedId)
+        {
+            int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
+            return Ok(await _userService.LockAccount(id, userLockedId));
+        }
+
+        [HttpPut("UnLockAccount/{userLUnockedId}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> UnLockAccount([FromRoute] int userLUnockedId)
+        {
+            int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
+            return Ok(await _userService.UnLockAccount(id, userLUnockedId));
+        }
+        [HttpPut("ChangeDecentralization")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ChangeDecentralization(Request_ChangeDecentralization request)
+        {
+            return Ok(await _userService.ChangeDecentralization(request));
         }
     }
 }

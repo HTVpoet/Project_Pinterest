@@ -23,12 +23,12 @@ namespace Project_Pinterest.Services.Implements
                 return _responseObject.ResponseError(StatusCodes.Status400BadRequest, "Không thể follow chính mình", Enums.Action.NOTCONSTRAINT);
             }
             Relationship relationshipExisted = await _context.relationships.Where(x => x.Follower.Id == ownerId && x.Following.Id == partnerId).SingleOrDefaultAsync();
-            User partner = await _context.users.SingleOrDefaultAsync(x => x.Id == partnerId && x.IsActive == true);
+            User partner = await _context.users.SingleOrDefaultAsync(x => x.Id == partnerId && x.IsActive == true && x.IsLocked == false);
             if(partner == null)
             {
                 return _responseObject.ResponseError(StatusCodes.Status404NotFound, "Không tìm thấy người dùng", Enums.Action.NOTCONSTRAINT);
             }
-            User owner = await _context.users.SingleOrDefaultAsync(x => x.Id == ownerId && x.IsActive == true);
+            User owner = await _context.users.SingleOrDefaultAsync(x => x.Id == ownerId && x.IsActive == true && x.IsLocked == false);
             if (owner == null)
             {
                 return _responseObject.ResponseError(StatusCodes.Status404NotFound, "Không tìm thấy người dùng", Enums.Action.NOTCONSTRAINT);

@@ -11,5 +11,8 @@ namespace Project_Pinterest.Services.Interfaces
         Task<string> DeleteUser(int userId);
         Task<PageResult<DataResponseUser>> GetAllUsers(int pageSize, int pageNumber);
         Task<PageResult<DataResponseUser>> GetUserByName(string? name, int pageSize, int pageNumber);
+        Task<string> LockAccount(int adminId, int userLockedId);
+        Task<string> UnLockAccount(int adminId, int userUnLockedId);
+        Task<string> ChangeDecentralization(Request_ChangeDecentralization request);
     }
 }
