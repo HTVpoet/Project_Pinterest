@@ -24,8 +24,8 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<ResponseObject<DataResponseReport>> CreateReport(int userReportId, Request_CreateReport request)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userReportId);
-            var post = await _context.posts.SingleOrDefaultAsync(x => x.Id == request.PostId);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userReportId && x.IsLocked == false && x.IsActive == true);
+            var post = await _context.posts.SingleOrDefaultAsync(x => x.Id == request.PostId && x.IsDeleted == false);
             if(post == null)
             {
                 return _responseObject.ResponseError(StatusCodes.Status400BadRequest, "Bài viết không tồn tại", null);

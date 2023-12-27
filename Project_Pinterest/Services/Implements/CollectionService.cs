@@ -27,7 +27,7 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<ResponseObject<DataResponseCollection>> CreateCollection(int userId, Request_CreateCollection request)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsLocked == false && x.IsActive == true);
             Collection collection = new Collection
             {
                 Name = request.Name,
@@ -41,7 +41,7 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<string> DeleteCollection(int userId, int collectionId)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsLocked == false && x.IsActive == true);
             var collection = await _context.collections.SingleOrDefaultAsync(x => x.Id == collectionId);
             if(collection == null)
             {
@@ -89,7 +89,7 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<ResponseObject<DataResponseCollection>> UpdateCollection(int userId, Request_UpdateCollection request)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsLocked == false && x.IsActive == true );
             var collection = await _context.collections.SingleOrDefaultAsync(x => x.Id == request.CollectionId);
             if(collection == null)
             {

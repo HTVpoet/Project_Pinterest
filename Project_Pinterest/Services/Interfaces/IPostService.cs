@@ -22,5 +22,6 @@ namespace Project_Pinterest.Services.Interfaces
         Task<string> UserLikeComment(int userId, int commentId);
         Task<ResponseObject<DataResponsePost>> SharePost(int userId, int postId);
         Task<string> DownloadImageForPost(int postId);
+        Task<PageResult<DataResponseComment>> GetCommentByPost(int postId, int pageSize, int pageNumber);
     }
 }

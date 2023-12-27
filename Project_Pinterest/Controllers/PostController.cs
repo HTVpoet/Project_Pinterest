@@ -21,6 +21,7 @@ namespace Project_Pinterest.Controllers
         }
         [HttpPost("CreatePost")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Consumes(contentType: "multipart/form-data")]
         public async Task<IActionResult> CreatePost([FromForm] Request_CreatePost request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
@@ -46,6 +47,7 @@ namespace Project_Pinterest.Controllers
         }
         [HttpPut("UpdatePost")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Consumes(contentType: "multipart/form-data")]
         public async Task<IActionResult> UpdatePost([FromForm] Request_UpdatePost request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
@@ -107,6 +109,11 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> DownloadImageForPost(int postId)
         {
             return Ok(await _postService.DownloadImageForPost(postId));
+        }
+        [HttpGet("GetCommentByPost/{postId}")]
+        public async Task<IActionResult> GetCommentByPost([FromRoute] int postId, int pageSize = 10, int pageNumber = 1)
+        {
+            return Ok(await _postService.GetCommentByPost(postId, pageSize, pageNumber));
         }
     }
 }

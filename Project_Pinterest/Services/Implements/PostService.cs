@@ -39,7 +39,7 @@ namespace Project_Pinterest.Services.Implements
             {
                 return _responeObjectComment.ResponseError(StatusCodes.Status404NotFound, "Không tìm thấy bài viết", null);
             }
-            var userComment = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true);
+            var userComment = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true && x.IsLocked == false);
             UserCommentPost comment = new UserCommentPost
             {
                 CreateAt = DateTime.Now,
@@ -60,7 +60,7 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<ResponseObject<DataResponsePost>> CreatePost(int userId, Request_CreatePost request)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true && x.IsLocked == false);
             Post post = new Post
             {
                 CreateAt = DateTime.Now,
@@ -91,7 +91,7 @@ namespace Project_Pinterest.Services.Implements
             {
                 return "Không tìm thấy bình luận này";
             }
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsLocked == false && x.IsActive == true);
             comment.IsDeleted = true;
             comment.IsActive = false;
             comment.RemoveAt = DateTime.Now;
@@ -105,7 +105,7 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<string> DeletePost(int userId, int postId)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true && x.IsLocked == false);
             var post = await _context.posts.SingleOrDefaultAsync(x => x.Id == postId && x.IsDeleted == false && x.IsActive == true);
             var currentUser = _httpContextAccessor.HttpContext.User;
 
@@ -233,7 +233,7 @@ namespace Project_Pinterest.Services.Implements
             {
                 return _responeObjectComment.ResponseError(StatusCodes.Status404NotFound, "Không tìm thấy bình luận", null);
             }
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true && x.IsLocked == false);
             comment.UpdateAt = DateTime.Now;
             comment.PostId = request.PostId;
             comment.Content = request.Comment;
@@ -245,7 +245,7 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<ResponseObject<DataResponsePost>> UpdatePost(int userId, Request_UpdatePost request)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsLocked == false && x.IsActive == true);
             var post = await _context.posts.SingleOrDefaultAsync(x => x.Id == request.PostId);
             if(post is null)
             {
@@ -292,7 +292,7 @@ namespace Project_Pinterest.Services.Implements
         }
         public async Task<ResponseObject<DataResponsePost>> SharePost(int userId, int postId)
         {
-            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true);
+            var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true && x.IsLocked == false);
             var originalPost = await _context.posts.SingleOrDefaultAsync(x => x.Id == postId && x.IsActive == true && x.IsDeleted == false);
 
             if (user == null || originalPost == null)
@@ -344,6 +344,11 @@ namespace Project_Pinterest.Services.Implements
             }
         }
 
-
+        public async Task<PageResult<DataResponseComment>> GetCommentByPost(int postId, int pageSize, int pageNumber)
+        {
+            var query = _context.userCommentPosts.Include(x => x.UserLikeCommentOfPosts).AsNoTracking().Where(x => x.PostId == postId).Select(x => _commentConverter.EntityToDTO(x));
+            var result = Pagination.GetPagedData(query, pageSize, pageNumber);
+            return result;
+        }
     }
 }

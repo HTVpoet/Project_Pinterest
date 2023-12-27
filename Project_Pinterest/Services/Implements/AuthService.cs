@@ -48,9 +48,13 @@ namespace Project_Pinterest.Services.Implements
             {
                 return _responseTokenObject.ResponseError(StatusCodes.Status404NotFound, "Tên tài khoản không tồn tại trên hệ thống", null);
             }
-            if(user.UserStatusId == 1)
+            if(user.UserStatusId == 1 || user.IsActive == false)
             {
                 return _responseTokenObject.ResponseError(StatusCodes.Status400BadRequest, "Tài khoản chưa được kích hoạt, vui lòng kích hoạt tài khoản", null);
+            }
+            if(user.IsLocked == true)
+            {
+                return _responseTokenObject.ResponseError(StatusCodes.Status400BadRequest, "Tài khoản đã bị khóa", null);
             }
             bool checkPass = BcryptNet.Verify(request.Password, user.Password);
             if (!checkPass)
@@ -76,7 +80,7 @@ namespace Project_Pinterest.Services.Implements
                     ValidateIssuerSigningKey = true,
                     ValidateAudience = false,
                     ValidateIssuer = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection(AppSettingsKeys.AUTH_SECRET).Value!))
                 };
 
                 var tokenAuthentication = jwtTokenHandler.ValidateToken(request.AccessToken, tokenValidation, out var validatedToken);
@@ -154,12 +158,13 @@ namespace Project_Pinterest.Services.Implements
                 user.IsActive = true;
                 user.RoleId = 2;
                 user.UserStatusId = 1;
+                user.IsLocked = false;
                 await _context.users.AddAsync(user);
                 await _context.SaveChangesAsync();
                 ConfirmEmail confirmEmail = new ConfirmEmail
                 {
                     UserId = user.Id,
-                    ConfirmCode = "Pin_" + "_" + GenerateCodeActive().ToString(),
+                    ConfirmCode = GenerateCodeActive().ToString(),
                     ExpiredTime = DateTime.Now.AddMinutes(30),
                     Confirmed = false
                 };
