@@ -40,7 +40,7 @@ namespace Project_Pinterest.Services.Implements
             await _context.reports.AddAsync(report);
             await _context.SaveChangesAsync();
             var numberOfReport = _context.reports.Count(x => x.PostId ==  request.PostId);
-            if(numberOfReport >= 5)
+            if(numberOfReport >= 2)
             {
                 _context.posts.Remove(post);
                 _context.SaveChanges();

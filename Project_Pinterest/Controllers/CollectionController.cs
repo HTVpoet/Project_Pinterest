@@ -41,8 +41,8 @@ namespace Project_Pinterest.Controllers
         {
             return Ok(await _collectionService.GetAllCollections(pageSize, pageNumber));
         }
-        [HttpGet("GetCollectionById")]
-        public async Task<IActionResult> GetCollectionById(int collectionId)
+        [HttpGet("GetCollectionById/{collectionId}")]
+        public async Task<IActionResult> GetCollectionById([FromRoute] int collectionId)
         {
             return Ok(await _collectionService.GetCollectionById(collectionId));
         }
@@ -58,9 +58,9 @@ namespace Project_Pinterest.Controllers
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _collectionService.UpdateCollection(id, request));
         }
-        [HttpPost("CreateListPostCollection")]
+        [HttpPost("CreateListPostCollection/{collectionId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> CreateListPostCollection(int collectionId, List<Request_CreatePostCollection> requests)
+        public async Task<IActionResult> CreateListPostCollection([FromRoute] int collectionId, List<Request_CreatePostCollection> requests)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             return Ok(await _postCollectionService.CreateListPostCollection(id,collectionId, requests));
