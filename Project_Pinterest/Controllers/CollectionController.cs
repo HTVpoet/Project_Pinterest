@@ -7,6 +7,7 @@ using Project_Pinterest.Payloads.DataRequests.CollectionRequests;
 using Project_Pinterest.Payloads.DataResponses.DataCollection;
 using Project_Pinterest.Payloads.DataResponses.DataPostCollection;
 using Project_Pinterest.Payloads.Responses;
+using Project_Pinterest.Services.Implements;
 using Project_Pinterest.Services.Interfaces;
 
 namespace Project_Pinterest.Controllers
@@ -27,14 +28,28 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> CreateCollection(Request_CreateCollection request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _collectionService.CreateCollection(id, request));
+            var result = await _collectionService.CreateCollection(id, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
-        [HttpDelete("DeleteCollection")]
+        [HttpDelete("DeleteCollection/{collectionId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> DeleteCollection(int collectionId)
+        public async Task<IActionResult> DeleteCollection( [FromRoute] int collectionId)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _collectionService.DeleteCollection(id, collectionId));
+            var result = await _collectionService.DeleteCollection(id, collectionId);
+            return Ok(result);
         }
         [HttpGet("GetAllCollections")]
         public async Task<IActionResult> GetAllCollections(int pageSize = 10, int pageNumber = 1)
@@ -56,7 +71,20 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> UpdateCollection(Request_UpdateCollection request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _collectionService.UpdateCollection(id, request));
+            var result = await _collectionService.UpdateCollection(id, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
         [HttpPost("CreateListPostCollection/{collectionId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -70,7 +98,20 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> CreatePostCollection(int collectionId, Request_CreatePostCollection request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postCollectionService.CreatePostCollection(id, collectionId, request));
+            var result = await _postCollectionService.CreatePostCollection(id, collectionId, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
     }
 }

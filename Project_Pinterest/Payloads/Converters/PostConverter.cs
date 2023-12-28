@@ -1,4 +1,5 @@
-﻿using Project_Pinterest.DataContexts;
+﻿using Microsoft.EntityFrameworkCore;
+using Project_Pinterest.DataContexts;
 using Project_Pinterest.Entities;
 using Project_Pinterest.Payloads.DataResponses.DataPost;
 
@@ -9,14 +10,17 @@ namespace Project_Pinterest.Payloads.Converters
         private readonly AppDbContext _context;
         private readonly CommentConverter _commentConverter;
         private readonly LikeConverter _userLikePost;
-        public PostConverter(AppDbContext context, CommentConverter commentConverter, LikeConverter userLikePost)
+        private readonly UserConverter _userConverter;
+        public PostConverter(AppDbContext context, CommentConverter commentConverter, LikeConverter userLikePost, UserConverter userConverter)
         {
             _context = context;
             _commentConverter = commentConverter;
             _userLikePost = userLikePost;
+            _userConverter = userConverter;
         }
         public DataResponsePost EntityToDTO(Post post)
         {
+            var postItem = _context.posts.Include(x => x.User).Include(x => x.PostStatus).Include(x => x.UserLikePosts).Include(x => x.UserCommentPosts).AsNoTracking().SingleOrDefault(x => x.Id == post.Id);
             return new DataResponsePost
             {
                 Id = post.Id,
@@ -25,12 +29,12 @@ namespace Project_Pinterest.Payloads.Converters
                 UpdateAt = post.UpdateAt,
                 Description = post.Description,
                 ImageUrl = post.ImageUrl,
+                DataResponseUser = _userConverter.EntityToDTO(post.User),
                 NumberOfComments = post.NumberOfComments,
                 NumberOfLikes = post.NumberOfLikes,
-                PostStatusName = _context.postsStatus.SingleOrDefault(x => x.Id == post.PostStatusId).Name,
-                FullName = _context.users.SingleOrDefault(x => x.Id == post.UserId).FullName,
-                DataResponseComments = _context.userCommentPosts.Where(x => x.PostId == post.Id).Select(x => _commentConverter.EntityToDTO(x)),
-                DataResponseLikes = _context.userLikePosts.Where(x => x.PostId == post.Id).Select(x => _userLikePost.EntityToDTO(x))
+                PostStatusName = postItem.PostStatus.Name,
+                DataResponseComments = postItem.UserCommentPosts.Select(x => _commentConverter.EntityToDTO(x)).AsQueryable(),
+                DataResponseLikes = postItem.UserLikePosts.Select(x => _userLikePost.EntityToDTO(x)).AsQueryable()
             };
         }
     }

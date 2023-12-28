@@ -6,7 +6,9 @@ using Project_Pinterest.Handler.HandlePagination;
 using Project_Pinterest.Payloads.DataRequests.PostRequests;
 using Project_Pinterest.Payloads.DataResponses.DataPost;
 using Project_Pinterest.Payloads.Responses;
+using Project_Pinterest.Services.Implements;
 using Project_Pinterest.Services.Interfaces;
+using System.ComponentModel.Design;
 
 namespace Project_Pinterest.Controllers
 {
@@ -25,7 +27,20 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> CreatePost([FromForm] Request_CreatePost request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.CreatePost(id, request));
+            var result = await _postService.CreatePost(id, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
         [HttpPut("DeletePost/{postId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -40,8 +55,8 @@ namespace Project_Pinterest.Controllers
         {
             return Ok(await _postService.GetAllPost(pageSize, pageNumber));
         }
-        [HttpGet("GetPostByUser")]
-        public async Task<IActionResult> GetPostByUser(int userId, int pageSize = 10, int pageNumber = 1)
+        [HttpGet("GetPostByUser/{userId}")]
+        public async Task<IActionResult> GetPostByUser([FromRoute] int userId, int pageSize = 10, int pageNumber = 1)
         {
             return Ok(await _postService.GetPostByUser(userId, pageSize, pageNumber));
         }
@@ -51,14 +66,40 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> UpdatePost([FromForm] Request_UpdatePost request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.UpdatePost(id, request));
+            var result = await _postService.UpdatePost(id, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
         [HttpPost("CreateComment")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> CreateComment(Request_CreateComment request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.CreateComment(id, request));
+            var result = await _postService.CreateComment(id, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
         [HttpPut("DeleteComment")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -89,7 +130,20 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> UpdateComment(int commentId,Request_UpdateComment request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.UpdateComment(commentId, id, request));
+            var result = await _postService.UpdateComment(commentId, id, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
         [HttpPost("UserLikeComment/{commentId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -103,17 +157,35 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> SharePost([FromRoute] int postId)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.SharePost(id, postId));
+            var result = await _postService.SharePost(id, postId);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
-        [HttpPost("DownloadImageForPost")]
-        public async Task<IActionResult> DownloadImageForPost(int postId)
+        [HttpPost("DownloadImageForPost/{postId}")]
+        public async Task<IActionResult> DownloadImageForPost([FromRoute] int postId, string saveDirectory)
         {
-            return Ok(await _postService.DownloadImageForPost(postId));
+            return Ok(await _postService.DownloadImageForPost(postId, saveDirectory));
         }
         [HttpGet("GetCommentByPost/{postId}")]
         public async Task<IActionResult> GetCommentByPost([FromRoute] int postId, int pageSize = 10, int pageNumber = 1)
         {
             return Ok(await _postService.GetCommentByPost(postId, pageSize, pageNumber));
+        }
+        [HttpGet("GetPostByTitle")]
+        public async Task<IActionResult> GetPostByTitle(string title, int pageSize = 10, int pageNumber = 1)
+        {
+            return Ok(await _postService.GetPostByTitle(title, pageSize, pageNumber));
         }
     }
 }

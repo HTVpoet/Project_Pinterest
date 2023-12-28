@@ -21,7 +21,6 @@ namespace Project_Pinterest.Services.Implements
         private readonly CommentConverter _commentConverter;
         private readonly PostConverter _converter;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public const string saveDirectory = "C:\\Users\\Admin\\Downloads";
         public PostService(AppDbContext context, ResponseObject<DataResponsePost> responseObject, PostConverter converter, IHttpContextAccessor httpContextAccessor, ResponseObject<DataResponseComment> responseObjectComment, CommentConverter commentConverter)
         {
             _context = context;
@@ -61,12 +60,13 @@ namespace Project_Pinterest.Services.Implements
         public async Task<ResponseObject<DataResponsePost>> CreatePost(int userId, Request_CreatePost request)
         {
             var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userId && x.IsActive == true && x.IsLocked == false);
+            var uploadImageTask = HandleUploadImage.Upfile(request.ImageUrl);
             Post post = new Post
             {
                 CreateAt = DateTime.Now,
                 IsActive = true,
                 Description = request.Description,
-                ImageUrl = await HandleUploadImage.Upfile(request.ImageUrl),
+                ImageUrl = "",
                 IsDeleted = false,
                 NumberOfComments = 0,
                 NumberOfLikes = 0,
@@ -76,6 +76,14 @@ namespace Project_Pinterest.Services.Implements
             };
             await _context.posts.AddAsync(post);
             await _context.SaveChangesAsync();
+            try
+            {
+                post.ImageUrl = await uploadImageTask;
+                await _context.SaveChangesAsync();
+            }catch(TaskCanceledException ex)
+            {
+                throw new ArgumentNullException(ex.Message);
+            }
             return _responseObject.ResponseSuccess("Thêm ảnh thành công", _converter.EntityToDTO(post));
         }
 
@@ -319,7 +327,7 @@ namespace Project_Pinterest.Services.Implements
 
             return _responseObject.ResponseSuccess("Chia sẻ bài đăng thành công", _converter.EntityToDTO(sharedPost));
         }
-        public async Task<string> DownloadImageForPost(int postId)
+        public async Task<string> DownloadImageForPost(int postId, string saveDirectory)
         {
             var post = await _context.posts.SingleOrDefaultAsync(x => x.Id == postId);
             if (post == null || string.IsNullOrEmpty(post.ImageUrl))
@@ -347,6 +355,13 @@ namespace Project_Pinterest.Services.Implements
         public async Task<PageResult<DataResponseComment>> GetCommentByPost(int postId, int pageSize, int pageNumber)
         {
             var query = _context.userCommentPosts.Include(x => x.UserLikeCommentOfPosts).AsNoTracking().Where(x => x.PostId == postId).Select(x => _commentConverter.EntityToDTO(x));
+            var result = Pagination.GetPagedData(query, pageSize, pageNumber);
+            return result;
+        }
+
+        public async Task<PageResult<DataResponsePost>> GetPostByTitle(string title, int pageSize, int pageNumber)
+        {
+            var query = _context.posts.Include(x => x.User).Include(x => x.UserCommentPosts).Include(x => x.UserLikePosts).AsNoTracking().Where(x => x.Title.Trim().ToLower().Contains(title.Trim().ToLower())).Select(x => _converter.EntityToDTO(x));
             var result = Pagination.GetPagedData(query, pageSize, pageNumber);
             return result;
         }

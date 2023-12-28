@@ -1,4 +1,5 @@
-﻿using Project_Pinterest.DataContexts;
+﻿using Microsoft.EntityFrameworkCore;
+using Project_Pinterest.DataContexts;
 using Project_Pinterest.Entities;
 using Project_Pinterest.Payloads.DataResponses.DataCollection;
 
@@ -17,13 +18,14 @@ namespace Project_Pinterest.Payloads.Converters
         }
         public DataResponseCollection EntityToDTO(Collection collection)
         {
+            var collectionItem = _context.collections.Include(x => x.User).Include(x => x.PostCollections).AsNoTracking().SingleOrDefault(x => x.Id == collection.Id);
             return new DataResponseCollection()
             {
                 Id = collection.Id,
                 Name = collection.Name,
                 Title = collection.Title,
-                UserName = _context.users.SingleOrDefault(x => x.Id == collection.UserId).FullName,
-                DataResponsePostCollections = _context.postCollections.Where(x => x.CollectionId == collection.Id).Select(x => _converter.EntityToDTO(x)),
+                UserName = collectionItem.User.FullName,
+                DataResponsePostCollections = collectionItem.PostCollections.Select(x => _converter.EntityToDTO(x)).AsQueryable(),
             };
         }
     }
