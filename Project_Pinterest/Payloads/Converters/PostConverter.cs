@@ -29,7 +29,7 @@ namespace Project_Pinterest.Payloads.Converters
                 UpdateAt = post.UpdateAt,
                 Description = post.Description,
                 ImageUrl = post.ImageUrl,
-                DataResponseUser = _userConverter.EntityToDTO(post.User),
+                DataResponseUser = postItem.User == null ? null : _userConverter.EntityToDTO(postItem.User),
                 NumberOfComments = post.NumberOfComments,
                 NumberOfLikes = post.NumberOfLikes,
                 PostStatusName = postItem.PostStatus.Name,

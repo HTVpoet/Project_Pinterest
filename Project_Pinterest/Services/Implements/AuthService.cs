@@ -50,7 +50,7 @@ namespace Project_Pinterest.Services.Implements
             }
             if(user.UserStatusId == 1 || user.IsActive == false)
             {
-                return _responseTokenObject.ResponseError(StatusCodes.Status400BadRequest, "Tài khoản chưa được kích hoạt, vui lòng kích hoạt tài khoản", null);
+                return _responseTokenObject.ResponseError(StatusCodes.Status400BadRequest, "Tài khoản chưa được kích hoạt hoặc đã bị xóa, vui lòng kích hoạt tài khoản", null);
             }
             if(user.IsLocked == true)
             {

@@ -14,7 +14,22 @@ namespace Project_Pinterest.Payloads.Converters
         }
         public DataResponseUser EntityToDTO(User user)
         {
-            var userItem = _context.users.Include(x => x.Role).Include(x => x.UserStatus).AsNoTracking().SingleOrDefault(x => x.Id == user.Id);
+            if (user == null || user.Id == null)
+            {
+                throw new ArgumentNullException("User is null or User.Id is null");
+            }
+
+            var userItem = _context.users
+                .Include(x => x.Role)
+                .Include(x => x.UserStatus)
+                .AsNoTracking()
+                .FirstOrDefault(x => x.Id == user.Id);
+
+            if (userItem == null)
+            {
+                return null;
+            }
+
             return new DataResponseUser
             {
                 Id = user.Id,
@@ -22,9 +37,11 @@ namespace Project_Pinterest.Payloads.Converters
                 DateOfBirth = user.DateOfBirth,
                 Email = user.Email,
                 FullName = user.FullName,
-                RoleName = userItem.Role.Name,
+                RoleName = userItem.Role?.Name,
                 UserName = user.UserName,
-                UserStatusName = userItem.UserStatus.Name
+                UserStatusName = userItem.UserStatus?.Name
+
+
             };
         }
     }

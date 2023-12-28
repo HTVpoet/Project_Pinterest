@@ -140,16 +140,15 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<PageResult<DataResponsePost>> GetAllPost(int pageSize, int pageNumber)
         {
-            var posts = await _context.posts
+            var posts =  _context.posts
                                       .Include(x => x.UserLikePosts)
                                       .Include(x => x.UserCommentPosts)
                                       .AsNoTracking()
                                       .Where(x => x.IsActive == true && x.IsDeleted == false)
-                                      .ToListAsync();
+                                      .Select(post => _converter.EntityToDTO(post));
 
-            var postDTOs = posts.Select( post =>  _converter.EntityToDTO(post)).ToList();
 
-            var result = Pagination.GetPagedData(postDTOs.AsQueryable(), pageSize, pageNumber);
+            var result = Pagination.GetPagedData(posts, pageSize, pageNumber);
             return result;
         }
 
