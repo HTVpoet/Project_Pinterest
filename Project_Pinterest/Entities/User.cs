@@ -9,6 +9,7 @@
         public DateTime DateOfBirth { get; set; }
         public string Email { get; set; }
         public string? AvatarUrl { get; set; }
+        public bool? IsLocked { get; set; } = false;
         public int UserStatusId { get; set; }
         public bool? IsActive { get; set; }
         public virtual Role? Role { get; set; }
