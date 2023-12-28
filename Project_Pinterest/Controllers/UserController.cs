@@ -6,6 +6,7 @@ using Project_Pinterest.Handler.HandlePagination;
 using Project_Pinterest.Payloads.DataRequests.UserRequests;
 using Project_Pinterest.Payloads.DataResponses.DataUser;
 using Project_Pinterest.Payloads.Responses;
+using Project_Pinterest.Services.Implements;
 using Project_Pinterest.Services.Interfaces;
 
 namespace Project_Pinterest.Controllers
@@ -40,10 +41,23 @@ namespace Project_Pinterest.Controllers
         [HttpPut("UpdateUser")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Consumes(contentType: "multipart/form-data")]
-        public async Task<IActionResult> UpdateUser(Request_UpdateUserInfor request)
+        public async Task<IActionResult> UpdateUser([FromForm] Request_UpdateUserInfor request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _userService.UpdateUser(id, request));
+            var result = await _userService.UpdateUser(id, request);
+            switch (result.Status)
+            {
+                case 200:
+                    return Ok(result);
+                case 404:
+                    return NotFound(result);
+                case 400:
+                    return BadRequest(result);
+                case 403:
+                    return Unauthorized(result);
+                default:
+                    return StatusCode(500, result);
+            }
         }
         [HttpPut("LockAccount/{userLockedId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -65,6 +79,22 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> ChangeDecentralization(Request_ChangeDecentralization request)
         {
             return Ok(await _userService.ChangeDecentralization(request));
+        }
+        [HttpGet("GetUserInformation/{userId}")]
+        public async Task<IActionResult> GetUserInformation(int userId)
+        {
+            return Ok(await _userService.GetUserInformation(userId));
+        }
+        [HttpGet("GetUserByRole/{roleId}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetUserByRole(int roleId, int pageSize = 10, int pageNumber = 1)
+        {
+            return Ok(await _userService.GetUserByRole(roleId, pageSize, pageNumber));
+        }
+        [HttpGet("GetUserById/{userId}")]
+        public async Task<IActionResult> GetUserById(int userId)
+        {
+            return Ok(await _userService.GetUserById(userId));
         }
     }
 }

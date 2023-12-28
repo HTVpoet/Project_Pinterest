@@ -14,5 +14,8 @@ namespace Project_Pinterest.Services.Interfaces
         Task<string> LockAccount(int adminId, int userLockedId);
         Task<string> UnLockAccount(int adminId, int userUnLockedId);
         Task<string> ChangeDecentralization(Request_ChangeDecentralization request);
+        Task<ResponseObject<DataResponseUser>> GetUserById(int userId);
+        Task<DataResponseUserInformation> GetUserInformation(int userId);
+        Task<PageResult<DataResponseUser>> GetUserByRole(int roleId, int pageSize, int pageNumber);
     }
 }
