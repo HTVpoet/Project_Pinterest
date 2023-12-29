@@ -21,7 +21,7 @@ namespace Project_Pinterest.Services.Implements
             _responseObject = responseObject;
             _converter = converter;
         }
-
+        //Report Post
         public async Task<ResponseObject<DataResponseReport>> CreateReport(int userReportId, Request_CreateReport request)
         {
             var user = await _context.users.SingleOrDefaultAsync(x => x.Id == userReportId && x.IsLocked == false && x.IsActive == true);
@@ -35,6 +35,7 @@ namespace Project_Pinterest.Services.Implements
                 CreateAt = DateTime.Now,
                 PostId = request.PostId,
                 Reason = request.Reason,
+                ReportType = Constants.ReportType.Post,
                 UserReportId = userReportId
             };
             await _context.reports.AddAsync(report);
@@ -47,6 +48,35 @@ namespace Project_Pinterest.Services.Implements
             }
 
             return _responseObject.ResponseSuccess("Báo cáo bài viết thành công", _converter.EntityToDTO(report));
+        }
+
+        public async Task<ResponseObject<DataResponseReport>> CreateReportUser(int userReportId, Request_CreateReportUser request)
+        {
+            var userReport = await _context.users.SingleOrDefaultAsync(x => x.Id == userReportId && x.IsLocked == false && x.IsActive == true);
+            var userReported = await _context.users.SingleOrDefaultAsync(x => x.Id == request.UserReportedId && x.IsLocked == false && x.IsActive == true);
+            if(userReported == null)
+            {
+                return _responseObject.ResponseError(StatusCodes.Status404NotFound, "Không tìm thấy người dùng", null);
+            }
+            Report report = new Report
+            {
+                CreateAt = DateTime.Now,
+                UserReportId = userReportId,
+                ReportType = Constants.ReportType.User,
+                Reason  = request.Reason,
+                UserReportedId = request.UserReportedId,
+            };
+            await _context.reports.AddAsync(report);
+            await _context.SaveChangesAsync();
+            var numberOfReport = _context.reports.Count(x => x.UserReportedId == request.UserReportedId);
+            if(numberOfReport >= 2)
+            {
+                userReported.IsLocked = true;
+                _context.users.Update(userReported);
+                _context.SaveChanges();
+            }
+
+            return _responseObject.ResponseSuccess("Báo cáo người dùng thành công", _converter.EntityToDTO(report));
         }
 
         public async Task<PageResult<DataResponseReport>> GetAllReportByPost(int postId, int pageSize, int pageNumber)

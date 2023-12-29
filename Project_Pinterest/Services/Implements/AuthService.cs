@@ -249,13 +249,13 @@ namespace Project_Pinterest.Services.Implements
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("minhquantb00@gmail.com", "jvztzxbtyugsiaea"),
+                Credentials = new NetworkCredential("tungdd.hrt@gmail.com", "jhetmlemvxlrxubr"),
                 EnableSsl = true
             };
             try
             {
                 var message = new MailMessage();
-                message.From = new MailAddress("minhquantb00@gmail.com");
+                message.From = new MailAddress("tungdd.hrt@gmail.com");
                 message.To.Add(emailTo.To);
                 message.Subject = emailTo.Subject;
                 message.Body = emailTo.Content;
@@ -296,12 +296,12 @@ namespace Project_Pinterest.Services.Implements
             return _responseObject.ResponseSuccess("Tạo mật khẩu mới thành công", _converter.EntityToDTO(user));
         }
 
-        public async Task<string> ForgotPassword(Request_ForgotPassword request)
+        public async Task<ResponseObject<DataResponseUser>> ForgotPassword(Request_ForgotPassword request)
         {
             User user = await _context.users.FirstOrDefaultAsync(x => x.Email.Equals(request.Email));
             if (user is null)
             {
-                return "Email không tồn tại trong hệ thống";
+                return _responseObject.ResponseError(StatusCodes.Status404NotFound, "Email không tồn tại trong hệ thống", null);
             }
             else
             {
@@ -323,45 +323,45 @@ namespace Project_Pinterest.Services.Implements
                     Subject = "Nhận mã xác nhận để tạo mật khẩu mới từ đây: ",
                     Content = $"Mã kích hoạt của bạn là: {confirmEmail.ConfirmCode}, mã này sẽ hết hạn sau 4 tiếng"
                 });
-                return "Gửi mã xác nhận về email thành công, vui lòng kiểm tra email";
+                return _responseObject.ResponseSuccess("Gửi mã xác nhận về email thành công, vui lòng kiểm tra email", _converter.EntityToDTO(user));
             }
         }
 
-        public async Task<string> ConfirmCreateNewAccount(Request_ConfirmCreateNewAccount request)
+        public async Task<ResponseObject<DataResponseUser>> ConfirmCreateNewAccount(Request_ConfirmCreateNewAccount request)
         {
             ConfirmEmail confirmEmail = await _context.confirmEmails.Where(x => x.ConfirmCode.Equals(request.ConfirmCode)).FirstOrDefaultAsync();
             if (confirmEmail is null)
             {
-                return "Mã xác nhận không chính xác";
+                return _responseObject.ResponseError(StatusCodes.Status404NotFound, "Mã xác nhận không chính xác", null);
             }
             if (confirmEmail.ExpiredTime < DateTime.Now)
             {
-                return "Mã xác nhận đã hết hạn";
+                return _responseObject.ResponseError(StatusCodes.Status400BadRequest, "Mã xác nhận đã hết hạn", null);
             }
             User user = _context.users.FirstOrDefault(x => x.Id == confirmEmail.UserId);
             user.UserStatusId = 2;
             _context.confirmEmails.Remove(confirmEmail);
             _context.users.Update(user);
             await _context.SaveChangesAsync();
-            return "Xác nhận đăng ký tài khoản thành công, vui lòng đăng nhập tài khoản của bạn";
+            return _responseObject.ResponseSuccess("Xác nhận đăng ký tài khoản thành công, vui lòng đăng nhập tài khoản của bạn", _converter.EntityToDTO(user));
         }
 
-        public async Task<string> ChangePassword(int userId, Request_ChangePassword request)
+        public async Task<ResponseObject<DataResponseUser>> ChangePassword(int userId, Request_ChangePassword request)
         {
             var user = await _context.users.FirstOrDefaultAsync(x => x.Id == userId);
             bool checkPass = BcryptNet.Verify(request.OldPassword, user.Password);
             if (!checkPass)
             {
-                return "Mật khẩu cũ không chính xác";
+                return _responseObject.ResponseError(StatusCodes.Status400BadRequest, "Mật khẩu cũ không chính xác", null);
             }
             if (request.NewPassword != request.ConfirmNewPassword)
             {
-                return "Mật khẩu không trùng nhau! Vui lòng thử lại";
+                return _responseObject.ResponseError(StatusCodes.Status400BadRequest, "Mật khẩu không trùng nhau! Vui lòng thử lại", null);
             }
             user.Password = BcryptNet.HashPassword(request.NewPassword);
             _context.users.Update(user);
             await _context.SaveChangesAsync();
-            return "Thay đổi mật khẩu thành công";
+            return _responseObject.ResponseSuccess("Thay đổi mật khẩu thành công", _converter.EntityToDTO(user));
         }
     }
 }

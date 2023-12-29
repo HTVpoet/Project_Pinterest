@@ -49,7 +49,12 @@ namespace Project_Pinterest.Controllers
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
             var result = await _collectionService.DeleteCollection(id, collectionId);
-            return Ok(result);
+            switch (result)
+            {
+                case "Bộ sưu tập không tồn tại": return NotFound(result);
+                case "Xóa bộ sưu tập thành công": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpGet("GetAllCollections")]
         public async Task<IActionResult> GetAllCollections(int pageSize = 10, int pageNumber = 1)

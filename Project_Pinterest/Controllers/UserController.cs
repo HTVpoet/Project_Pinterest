@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MySqlX.XDevAPI.Common;
 using Project_Pinterest.Handler.HandlePagination;
 using Project_Pinterest.Payloads.DataRequests.UserRequests;
 using Project_Pinterest.Payloads.DataResponses.DataUser;
@@ -24,7 +25,13 @@ namespace Project_Pinterest.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteUser([FromRoute] int userId)
         {
-            return Ok(await _userService.DeleteUser(userId));
+            var result = await _userService.DeleteUser(userId);
+            switch(result)
+            {
+                case "Người dùng không tồn tại": return NotFound(result);
+                case "Xóa thông tin người dùng thành công": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpGet("GetAllUsers")]
         [Authorize(Roles = "Admin")]
@@ -64,7 +71,15 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> LockAccount([FromRoute] int userLockedId)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _userService.LockAccount(id, userLockedId));
+            var result = await _userService.LockAccount(id, userLockedId);
+            switch (result)
+            {
+                case "Người dùng không tồn tại": return NotFound(result);
+                case "Người dùng không được xác thực hoặc không được xác định": return Unauthorized(result);
+                case "Tài khoản này đã bị khóa": return BadRequest(result);
+                case "Khóa tài khoản người dùng thành công": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
 
         [HttpPut("UnLockAccount/{userLUnockedId}")]
@@ -72,13 +87,28 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> UnLockAccount([FromRoute] int userLUnockedId)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _userService.UnLockAccount(id, userLUnockedId));
+            var result = await _userService.LockAccount(id, userLUnockedId);
+            switch (result)
+            {
+                case "Người dùng không tồn tại": return NotFound(result);
+                case "Người dùng không được xác thực hoặc không được xác định": return Unauthorized(result);
+                case "Tài khoản này chưa bị khóa": return BadRequest(result);
+                case "Mở khóa tài khoản người dùng thành công": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpPut("ChangeDecentralization")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> ChangeDecentralization(Request_ChangeDecentralization request)
         {
-            return Ok(await _userService.ChangeDecentralization(request));
+            var result = await _userService.ChangeDecentralization(request);
+            switch (result)
+            {
+                case "Không tìm thấy id người dùng": return NotFound(result);
+                case "Người dùng không được xác thực hoặc không được xác định": return Unauthorized(result);
+                case "Thay đổi quyền người dùng thành công": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpGet("GetUserInformation/{userId}")]
         public async Task<IActionResult> GetUserInformation(int userId)

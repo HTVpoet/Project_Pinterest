@@ -12,8 +12,8 @@ namespace Project_Pinterest.Services.Interfaces
         Task<ResponseObject<DataResponseToken>> Login(Request_Login request);
         ResponseObject<DataResponseToken> RenewAccessToken(Request_Token request);
         Task<ResponseObject<DataResponseUser>> ConfirmCreateNewPassword(Request_ConfirmNewPassword request);
-        Task<string> ForgotPassword(Request_ForgotPassword request);
-        Task<string> ConfirmCreateNewAccount(Request_ConfirmCreateNewAccount request);
-        Task<string> ChangePassword(int userId, Request_ChangePassword request);
+        Task<ResponseObject<DataResponseUser>> ForgotPassword(Request_ForgotPassword request);
+        Task<ResponseObject<DataResponseUser>> ConfirmCreateNewAccount(Request_ConfirmCreateNewAccount request);
+        Task<ResponseObject<DataResponseUser>> ChangePassword(int userId, Request_ChangePassword request);
     }
 }

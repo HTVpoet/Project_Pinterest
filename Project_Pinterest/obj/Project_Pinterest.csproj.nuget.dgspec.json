@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj": {}
+    "/home/biuss/Project_Pinterest/Project_Pinterest.csproj": {}
   },
   "projects": {
-    "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj": {
+    "/home/biuss/Project_Pinterest/Project_Pinterest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj",
+        "projectUniqueName": "/home/biuss/Project_Pinterest/Project_Pinterest.csproj",
         "projectName": "Project_Pinterest",
-        "projectPath": "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\obj\\",
+        "projectPath": "/home/biuss/Project_Pinterest/Project_Pinterest.csproj",
+        "packagesPath": "/home/biuss/.nuget/packages/",
+        "outputPath": "/home/biuss/Project_Pinterest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/biuss/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -152,7 +150,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.417/RuntimeIdentifierGraph.json"
         }
       }
     }

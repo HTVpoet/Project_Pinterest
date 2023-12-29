@@ -5,9 +5,9 @@ namespace Project_Pinterest.Handler.HandleImage
 {
     public class HandleUploadImage
     {
-        static string cloudName = "dacc055vz";
-        static string apiKey = "359551439884411";
-        static string apiSecret = "8MKLtn4MyEl3w6STTwZwGiCuuGM";
+        static string cloudName = "dazb00a3n";
+        static string apiKey = "331387329615619";
+        static string apiSecret = "yiKYb7GNcDU7mzNcCoAmMuHBvvo";
         static public Account account = new Account(cloudName, apiKey, apiSecret);
         static public Cloudinary _cloudinary = new Cloudinary(account);
         public static async Task<string> Upfile(IFormFile file)

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MySqlX.XDevAPI.Common;
 using Project_Pinterest.Handler.HandlePagination;
 using Project_Pinterest.Payloads.DataRequests.PostRequests;
 using Project_Pinterest.Payloads.DataResponses.DataPost;
@@ -48,7 +49,13 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> DeletePost([FromRoute] int postId)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.DeletePost(id, postId));
+            var result = await _postService.DeletePost(id, postId);
+            switch (result)
+            {
+                case "Bài đăng không tồn tại": return NotFound(result);
+                case "Xóa thành công!!!!!!": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpGet("GetAllPost")]
         public async Task<IActionResult> GetAllPost(int pageSize = 10, int pageNumber = 1)
@@ -106,7 +113,14 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> DeleteComment(Request_DeleteComment request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.DeleteComment(id, request));
+            var result = await _postService.DeleteComment(id, request);
+            switch (result)
+            {
+                case "Không tìm thấy bài viết": return NotFound(result);
+                case "Không tìm thấy bình luận này": return NotFound(result);
+                case "Xóa bình luận thành công": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpGet("GetCommentByUser/{userId}")]
         public async Task<IActionResult> GetCommentByUser([FromRoute] int userId, int pageSize = 10, int pageNumber = 1)
@@ -123,7 +137,13 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> LikePost(Request_UserLikePost request)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.LikePost(id, request));
+            var result = await _postService.LikePost(id, request);
+            switch (result)
+            {
+                case "Không tìm thấy bài viết": return NotFound(result);
+                case "Đã like bài viết": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpPut("UpdateComment")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -150,7 +170,13 @@ namespace Project_Pinterest.Controllers
         public async Task<IActionResult> UserLikeComment([FromRoute] int commentId)
         {
             int id = int.Parse(HttpContext.User.FindFirst("Id").Value);
-            return Ok(await _postService.UserLikeComment(id, commentId));
+            var result = await _postService.UserLikeComment(id, commentId);
+            switch (result)
+            {
+                case "Không tìm thấy bài viết": return NotFound(result);
+                case "Like bình luận thành công": return Ok(result);
+                default: return StatusCode(500, result);
+            }
         }
         [HttpPost("SharePost/{postId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
