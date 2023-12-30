@@ -43,7 +43,9 @@ namespace Project_Pinterest.Services.Implements
             var numberOfReport = _context.reports.Count(x => x.PostId ==  request.PostId);
             if(numberOfReport >= 2)
             {
-                _context.posts.Remove(post);
+                post.IsActive = true;
+                post.IsDeleted = true;
+                _context.posts.Update(post);
                 _context.SaveChanges();
             }
 

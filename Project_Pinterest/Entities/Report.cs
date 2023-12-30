@@ -7,7 +7,7 @@ namespace Project_Pinterest.Entities
     {
         public int? PostId { get; set; }
         public int? UserReportId { get; set; }
-        public int UserReportedId { get; set; }
+        public int? UserReportedId { get; set; }
         public string Reason { get; set; }
         public ReportType ReportType { get; set; }
         public DateTime CreateAt { get; set; }

@@ -21,8 +21,8 @@ namespace Project_Pinterest.Payloads.Converters
                 PostId = report.PostId,
                 Reason = report.Reason,
                 ReportType = report.ReportType,
-                UserReportedName = reportItem.UserReported.FullName,
-                UserReportName = reportItem.UserReport.FullName
+                UserReportedName = reportItem.UserReported?.FullName,
+                UserReportName = reportItem.UserReport?.FullName
             };
         }
     }
