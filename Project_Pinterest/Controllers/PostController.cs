@@ -43,6 +43,8 @@ namespace Project_Pinterest.Controllers
                     return StatusCode(500, result);
             }
         }
+
+        
         [HttpPut("DeletePost/{postId}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Authorize(Roles = "Admin")]
@@ -57,6 +59,7 @@ namespace Project_Pinterest.Controllers
                 default: return StatusCode(500, result);
             }
         }
+
         [HttpGet("GetAllPost")]
         public async Task<IActionResult> GetAllPost(int pageSize = 10, int pageNumber = 1)
         {

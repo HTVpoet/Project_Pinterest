@@ -1,145 +1,289 @@
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\appsettings.Development.json
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\appsettings.json
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Project_Pinterest.exe
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Project_Pinterest.deps.json
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Project_Pinterest.runtimeconfig.json
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Project_Pinterest.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Project_Pinterest.pdb
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Azure.Core.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Azure.Identity.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\BCrypt.Net-Next.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\CloudinaryDotNet.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\FluentEmail.Core.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\FluentEmail.MailKit.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\FluentEmail.Smtp.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Humanizer.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\ImageProcessor.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\MailKit.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.OpenApi.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\MimeKit.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Mono.TextTemplating.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Scrutor.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\SixLabors.ImageSharp.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.CodeDom.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Formats.Asn1.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Memory.Data.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Runtime.Caching.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Text.Json.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Windows.Extensions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.csproj.AssemblyReference.cache
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.AssemblyInfoInputs.cache
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.AssemblyInfo.cs
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.csproj.CoreCompileInputs.cache
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.MvcApplicationPartsAssemblyInfo.cs
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.MvcApplicationPartsAssemblyInfo.cache
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\staticwebassets\msbuild.Project_Pinterest.Microsoft.AspNetCore.StaticWebAssets.props
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\staticwebassets\msbuild.build.Project_Pinterest.props
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Project_Pinterest.props
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Project_Pinterest.props
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\staticwebassets.pack.json
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\staticwebassets.build.json
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\staticwebassets.development.json
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\scopedcss\bundle\Project_Pinterest.styles.css
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.csproj.CopyComplete
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\refint\Project_Pinterest.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.pdb
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\Project_Pinterest.genruntimeconfig.cache
-D:\Projects C#\Project_Pinterest\Project_Pinterest\obj\Debug\net6.0\ref\Project_Pinterest.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\selenium-manager\linux\selenium-manager
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\selenium-manager\macos\selenium-manager
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\selenium-manager\windows\selenium-manager.exe
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\AsyncIO.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\NaCl.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\NetMQ.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\WebDriver.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Private.ServiceModel.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.ServiceModel.Primitives.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.ServiceModel.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\cs\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\de\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\es\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\fr\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\it\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\ja\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\ko\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\pl\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\pt-BR\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\ru\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\tr\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\zh-Hans\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\zh-Hant\System.Private.ServiceModel.resources.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Google.Protobuf.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\K4os.Compression.LZ4.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\K4os.Hash.xxHash.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\MySql.Data.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\MySqlConnector.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\System.IO.Pipelines.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\ZstdSharp.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
-D:\Projects C#\Project_Pinterest\Project_Pinterest\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/appsettings.Development.json
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/appsettings.json
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.exe
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.deps.json
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.runtimeconfig.json
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.pdb
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Azure.Core.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Azure.Identity.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/BCrypt.Net-Next.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/BouncyCastle.Cryptography.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/CloudinaryDotNet.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/FluentEmail.Core.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/FluentEmail.MailKit.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/FluentEmail.Smtp.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Humanizer.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ImageProcessor.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MailKit.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Caching.Abstractions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Identity.Client.Extensions.Msal.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.OpenApi.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.SqlServer.Server.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MimeKit.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Mono.TextTemplating.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Newtonsoft.Json.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Scrutor.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/SixLabors.ImageSharp.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.CodeDom.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Drawing.Common.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Formats.Asn1.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Memory.Data.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Runtime.Caching.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Security.Cryptography.Pkcs.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Security.Permissions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Text.Encoding.CodePages.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Text.Json.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Windows.Extensions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.csproj.AssemblyReference.cache
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.GeneratedMSBuildEditorConfig.editorconfig
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.AssemblyInfoInputs.cache
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.AssemblyInfo.cs
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.csproj.CoreCompileInputs.cache
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.MvcApplicationPartsAssemblyInfo.cs
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.MvcApplicationPartsAssemblyInfo.cache
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets/msbuild.Project_Pinterest.Microsoft.AspNetCore.StaticWebAssets.props
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets/msbuild.build.Project_Pinterest.props
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.Project_Pinterest.props
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.Project_Pinterest.props
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets.pack.json
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets.build.json
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets.development.json
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/scopedcss/bundle/Project_Pinterest.styles.css
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.csproj.CopyComplete
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/refint/Project_Pinterest.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.pdb
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.genruntimeconfig.cache
+D:/Projects C#/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/ref/Project_Pinterest.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/selenium-manager/linux/selenium-manager
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/selenium-manager/macos/selenium-manager
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/selenium-manager/windows/selenium-manager.exe
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/AsyncIO.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/NaCl.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/NetMQ.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/WebDriver.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Private.ServiceModel.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.ServiceModel.Primitives.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.ServiceModel.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/cs/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/de/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/es/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/fr/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/it/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ja/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ko/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/pl/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/pt-BR/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ru/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/tr/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/zh-Hans/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/zh-Hant/System.Private.ServiceModel.resources.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Google.Protobuf.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/K4os.Compression.LZ4.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/K4os.Compression.LZ4.Streams.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/K4os.Hash.xxHash.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MySql.Data.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MySqlConnector.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.IO.Pipelines.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ZstdSharp.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/comerr64.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/gssapi64.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/k5sprt64.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/krb5_64.dll
+D:/Projects C#/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/krbcc64.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/appsettings.Development.json
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/selenium-manager/linux/selenium-manager
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/selenium-manager/macos/selenium-manager
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/selenium-manager/windows/selenium-manager.exe
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/appsettings.json
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.deps.json
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.runtimeconfig.json
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.pdb
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/AsyncIO.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Azure.Core.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Azure.Identity.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/BCrypt.Net-Next.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/BouncyCastle.Cryptography.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/CloudinaryDotNet.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/FluentEmail.Core.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/FluentEmail.MailKit.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/FluentEmail.Smtp.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Google.Protobuf.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Humanizer.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ImageProcessor.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/K4os.Compression.LZ4.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/K4os.Compression.LZ4.Streams.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/K4os.Hash.xxHash.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MailKit.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Caching.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Logging.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Logging.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Options.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.Primitives.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Identity.Client.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Identity.Client.Extensions.Msal.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.SqlServer.Server.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MimeKit.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Mono.TextTemplating.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MySql.Data.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/MySqlConnector.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/NaCl.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/NetMQ.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Newtonsoft.Json.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Scrutor.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/WebDriver.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/SixLabors.ImageSharp.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.CodeDom.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Diagnostics.DiagnosticSource.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Drawing.Common.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Formats.Asn1.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.IO.Pipelines.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Memory.Data.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Private.ServiceModel.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Runtime.Caching.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Security.Cryptography.Pkcs.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Security.Permissions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.ServiceModel.Primitives.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.ServiceModel.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Text.Encoding.CodePages.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Text.Encodings.Web.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Text.Json.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/System.Windows.Extensions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ZstdSharp.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/cs/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/de/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/es/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/fr/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/it/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ja/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ko/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/pl/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/pt-BR/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/ru/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/tr/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/zh-Hans/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/zh-Hant/System.Private.ServiceModel.resources.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/comerr64.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/gssapi64.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/k5sprt64.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/krb5_64.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win-x64/native/krbcc64.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.csproj.AssemblyReference.cache
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.GeneratedMSBuildEditorConfig.editorconfig
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.AssemblyInfoInputs.cache
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.AssemblyInfo.cs
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.csproj.CoreCompileInputs.cache
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.MvcApplicationPartsAssemblyInfo.cs
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.MvcApplicationPartsAssemblyInfo.cache
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets.build.json
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/staticwebassets.development.json
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/scopedcss/bundle/Project_Pinterest.styles.css
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.csproj.CopyComplete
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.dll
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/refint/Project_Pinterest.dll
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.pdb
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/Project_Pinterest.genruntimeconfig.cache
+/root/Project_Pinterest/Project_Pinterest/obj/Debug/net6.0/ref/Project_Pinterest.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Physical.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Microsoft.Extensions.FileSystemGlobbing.dll
+/root/Project_Pinterest/Project_Pinterest/bin/Debug/net6.0/Project_Pinterest.staticwebassets.runtime.json

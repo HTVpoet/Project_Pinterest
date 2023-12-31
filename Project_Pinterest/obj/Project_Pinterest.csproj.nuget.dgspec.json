@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj": {}
+    "/root/Project_Pinterest/Project_Pinterest/Project_Pinterest.csproj": {}
   },
   "projects": {
-    "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj": {
+    "/root/Project_Pinterest/Project_Pinterest/Project_Pinterest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj",
+        "projectUniqueName": "/root/Project_Pinterest/Project_Pinterest/Project_Pinterest.csproj",
         "projectName": "Project_Pinterest",
-        "projectPath": "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\Project_Pinterest.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects C#\\Project_Pinterest\\Project_Pinterest\\obj\\",
+        "projectPath": "/root/Project_Pinterest/Project_Pinterest/Project_Pinterest.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/root/Project_Pinterest/Project_Pinterest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -92,6 +90,10 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Microsoft.Extensions.FileProviders.Physical": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "MimeKit": {
               "target": "Package",
               "version": "[4.3.0, )"
@@ -152,7 +154,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.417/RuntimeIdentifierGraph.json"
         }
       }
     }

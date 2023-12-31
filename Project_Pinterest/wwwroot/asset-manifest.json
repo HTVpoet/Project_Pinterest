@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ba73a033.css",
+    "main.js": "/static/js/main.bc87ca6a.js",
+    "static/js/764.2cec4a7d.chunk.js": "/static/js/764.2cec4a7d.chunk.js",
+    "static/js/496.4aebe0ae.chunk.js": "/static/js/496.4aebe0ae.chunk.js",
+    "static/js/685.16220d0a.chunk.js": "/static/js/685.16220d0a.chunk.js",
+    "static/js/333.4aa45e9c.chunk.js": "/static/js/333.4aa45e9c.chunk.js",
+    "static/js/785.b72c7083.chunk.js": "/static/js/785.b72c7083.chunk.js",
+    "static/js/288.d694f330.chunk.js": "/static/js/288.d694f330.chunk.js",
+    "static/js/53.78b162d8.chunk.js": "/static/js/53.78b162d8.chunk.js",
+    "static/js/470.aab913ea.chunk.js": "/static/js/470.aab913ea.chunk.js",
+    "static/js/615.ba18de60.chunk.js": "/static/js/615.ba18de60.chunk.js",
+    "static/js/62.51c08655.chunk.js": "/static/js/62.51c08655.chunk.js",
+    "static/js/659.38d29fb5.chunk.js": "/static/js/659.38d29fb5.chunk.js",
+    "static/js/502.02814151.chunk.js": "/static/js/502.02814151.chunk.js",
+    "static/js/948.27bfc649.chunk.js": "/static/js/948.27bfc649.chunk.js",
+    "static/js/997.4bfccd65.chunk.js": "/static/js/997.4bfccd65.chunk.js",
+    "static/js/559.fb3ee048.chunk.js": "/static/js/559.fb3ee048.chunk.js",
+    "static/js/705.f37acc96.chunk.js": "/static/js/705.f37acc96.chunk.js",
+    "static/js/27.19bdd7d6.chunk.js": "/static/js/27.19bdd7d6.chunk.js",
+    "static/js/19.cc707096.chunk.js": "/static/js/19.cc707096.chunk.js",
+    "static/js/233.bf35706f.chunk.js": "/static/js/233.bf35706f.chunk.js",
+    "static/js/195.d6eb6fbf.chunk.js": "/static/js/195.d6eb6fbf.chunk.js",
+    "static/js/952.6f7b7ddc.chunk.js": "/static/js/952.6f7b7ddc.chunk.js",
+    "static/js/802.fd080edf.chunk.js": "/static/js/802.fd080edf.chunk.js",
+    "static/js/573.fdf2a666.chunk.js": "/static/js/573.fdf2a666.chunk.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.ba73a033.css",
+    "static/js/main.bc87ca6a.js"
+  ]
+}

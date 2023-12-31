@@ -249,13 +249,13 @@ namespace Project_Pinterest.Services.Implements
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("minhquantb00@gmail.com", "jvztzxbtyugsiaea"),
+                Credentials = new NetworkCredential("tungdd.hrt@gmail.com", "jhetmlemvxlrxubr"),
                 EnableSsl = true
             };
             try
             {
                 var message = new MailMessage();
-                message.From = new MailAddress("minhquantb00@gmail.com");
+                message.From = new MailAddress("tungdd.hrt@gmail.com");
                 message.To.Add(emailTo.To);
                 message.Subject = emailTo.Subject;
                 message.Body = emailTo.Content;

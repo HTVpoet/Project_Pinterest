@@ -122,10 +122,11 @@ namespace Project_Pinterest.Services.Implements
                 throw new UnauthorizedAccessException("Người dùng không được xác thực hoặc không được xác định");
             }
 
-            if (!currentUser.IsInRole("Admin") || post.UserId != userId)
+            if (!currentUser.IsInRole("Admin"))
             {
                 throw new UnauthorizedAccessException("Người dùng không có quyền sử dụng chức năng này");
             }
+
             if (post is null)
             {
                 return "Bài đăng không tồn tại";
@@ -144,7 +145,7 @@ namespace Project_Pinterest.Services.Implements
                                       .Include(x => x.UserLikePosts)
                                       .Include(x => x.UserCommentPosts)
                                       .AsNoTracking()
-                                      .Where(x => x.IsActive == true && x.IsDeleted == false)
+                                      .Where(x => x.IsActive == true && x.IsDeleted == false && x.User.IsActive == true && x.User.IsLocked == false)
                                       .Select(post => _converter.EntityToDTO(post));
 
 
@@ -180,11 +181,11 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<PageResult<DataResponsePost>> GetPostByUser(int userId, int pageSize, int pageNumber)
         {
-            var userPosts = await _context.posts
+            var userPosts = await _context.posts.Include(x => x.User)
                                           .Include(x => x.UserLikePosts)
                                           .Include(x => x.UserCommentPosts)
                                           .AsNoTracking()
-                                          .Where(x => x.UserId == userId && x.IsDeleted == false && x.IsActive == true)
+                                          .Where(x => x.UserId == userId && x.IsDeleted == false && x.IsActive == true && x.User.IsActive == true)
                                           .ToListAsync();
 
             // Next, asynchronously convert each post to DTO
@@ -360,7 +361,12 @@ namespace Project_Pinterest.Services.Implements
 
         public async Task<PageResult<DataResponsePost>> GetPostByTitle(string title, int pageSize, int pageNumber)
         {
-            var query = _context.posts.Include(x => x.User).Include(x => x.UserCommentPosts).Include(x => x.UserLikePosts).AsNoTracking().Where(x => x.Title.Trim().ToLower().Contains(title.Trim().ToLower())).Select(x => _converter.EntityToDTO(x));
+            var query = _context.posts.
+            Include(x => x.User).
+            Include(x => x.UserCommentPosts).
+            Include(x => x.UserLikePosts).
+            AsNoTracking().
+            Where(x => x.IsDeleted == false && x.Title.Trim().ToLower().Contains(title.Trim().ToLower())).Select(x => _converter.EntityToDTO(x));
             var result = Pagination.GetPagedData(query, pageSize, pageNumber);
             return result;
         }
