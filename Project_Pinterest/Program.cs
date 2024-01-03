@@ -122,11 +122,10 @@ app.UseCors(x => x
     .AllowCredentials());
 app.UseHttpsRedirection();
 app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
 
 app.UseStaticFiles();
-
-app.UseRouting();
 
 
 app.MapControllers();
